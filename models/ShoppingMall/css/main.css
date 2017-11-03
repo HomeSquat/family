@@ -1,0 +1,107 @@
+/**
+ * main页面的样式文件
+ * create time 2017-10-31
+ */
+
+
+/*轮播区域--start*/
+	/*轮播--start*/
+.mui-slider{
+	position: relative;
+    width: 10.0rem;
+    height: 5.333333rem;
+}
+.mui-slider-indicator .mui-indicator{
+	background: rgba(200,100,50,.5);
+	box-shadow: none;
+}
+.mui-slider-indicator .mui-indicator.mui-active{
+	background: rgba(0, 122, 255,.8);
+}
+	/*轮播--end*/
+	/*搜索框--start*/  
+.mui-search{
+    position: absolute;
+    width: 9.066667rem;
+    height: 0.8rem;
+    top: 0.266667rem;
+    left: 0.466667rem;
+    
+}
+#search{
+    position: absolute;
+    width: 9.066667rem;
+    height: 0.8rem;
+    font-size: 0.373333rem;
+    text-align: center;
+    top: 0.266667rem;
+    left: 0.466667rem;
+    border-radius: 0.8rem;
+    background: rgba(255,255,255,0.8);
+}
+
+	/*搜索框--start*/
+
+/*轮播区域--end*/
+
+/*tab-list横向滚动区域--start*/
+#tab-list{
+    box-sizing: border-box;
+    height: 2.133333rem;
+    padding:0.266667rem 0;
+    top: 5.333333rem;
+    left: 0;
+    background: #fff;
+}
+
+#tab-list .mui-scroll{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    width: auto;
+} 
+
+#tab-list .mui-scroll .tab-item{
+    width: 1.333333rem;
+    height: 1.6rem;
+    margin:0 0.583333rem;
+}
+#tab-list .mui-scroll .tab-item div{
+    width: 1.333333rem;
+    height: 1.2rem;
+    border-radius: 0.133333rem;
+    text-align: center;
+    line-height: 1.1rem;
+}
+#tab-list .mui-scroll .tab-item div.blue{
+	background: #6699ff;
+}
+#tab-list .mui-scroll .tab-item div.yellow{
+	background: #ff9900;
+}
+#tab-list .mui-scroll .tab-item div.orange{
+	background: #ff9999;
+}
+#tab-list .mui-scroll .tab-item div.pink{
+	background: #ff99ff;
+}
+#tab-list .mui-scroll .tab-item div.young{
+	background: #99cccc;
+} 
+#tab-list .mui-scroll .tab-item div span{
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+#tab-list .mui-scroll .tab-item p{
+	text-align: center;
+	color: #000;
+}
+
+/*tab-list横向滚动区域--end*/ 
+
+/*new-content-list最新内容展示列表--start*/
+#new-content-list{
+    margin-top: 2.666667rem;
+}
+/*new-content-list最新内容展示列表--end*/

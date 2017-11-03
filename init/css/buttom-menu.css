@@ -1,0 +1,19 @@
+/**
+ * buttom-menu页面的样式
+ * create time 2017-11-02
+ */
+
+/*底部导航栏*/
+.mui-bar-tab .mui-tab-item.mui-active
+{
+    color: #15A4F0;
+}
+.mui-bar-tab .mui-tab-item .mui-icon
+{
+    top: 7px;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+}

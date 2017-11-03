@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../public/css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="../../public/css/core.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/buttom-menu.css" />
+		<link rel="stylesheet" href="http://at.alicdn.com/t/font_461954_u0ybedqzpjkprpb9.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title"></h1>
+		</header>
+		<div class="mui-content">
+		    
+		</div>
+		<nav class="mui-bar mui-bar-tab">
+			<!--<a id="ShoppingMall" class="mui-tab-item mui-active">
+				<span class="mui-icon iconfont icon-jia"></span>
+				<span class="mui-tab-label">商城</span>
+			</a>
+			<a id="Dynamic" class="mui-tab-item">
+				<span class="mui-icon iconfont icon-dongtai-xiantiao"></span>
+				<span class="mui-tab-label">动态</span>
+			</a>
+			<a id="Purchase" class="mui-tab-item">
+				<span class="mui-icon iconfont icon-icon"></span>
+				<span class="mui-tab-label">已购</span>
+			</a>
+			<a id="Me" class="mui-tab-item">
+				<span class="mui-icon iconfont icon-wo"></span>
+				<span class="mui-tab-label">我</span>
+			</a>-->
+		</nav>
+	</body>
+	<script src="../../public/lib/mui.js" type="text/javascript"></script>
+	<script src="../../public/js/app.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var dom = {
+			$header_title : document.querySelector(".mui-bar-nav .mui-title"),
+			$bottom_nav : document.querySelector(".mui-bar-tab")
+		}
+		
+		mui.plusReady(function(){
+			/**
+			 * 向服务器请求底部导航栏列表，动态添加底部导航栏按钮
+			 * 
+			 */
+			
+			
+			/**
+			 * 创建子页面，各个模块的main页面
+			 * tab_list_array数组保存各个模块名
+			 * home_webview 用于设置哪个模块为首页，首页会在APP打开时默认显示
+			 * window_height 获取当前设备的屏幕高度（不包括顶部信息栏），用于设置子页面的高度
+			 * @author dongdongjie <zdj@ourstu.com> 2017-10-31
+			 */
+//			var tab_list_array = ["home","phone","email","gear"],
+			var tab_list_array = {
+					ShoppingMall:{name:"ShoppingMall",title:"商城",bottom_name:"商城",bottom_icon_name:"icon-ShoppingMall"},
+					Dynamic:{name:"Dynamic",title:"动态",bottom_name:"动态",bottom_icon_name:"icon-Dynamic"},
+					Purchase:{name:"Purchase",title:"已购",bottom_name:"已购",bottom_icon_name:"icon-Purchase"},
+					Me:{name:"Me",title:"我",bottom_name:"我",bottom_icon_name:"icon-Me"},
+			};
+				
+			for(var tab_item in tab_list_array){
+				addBottomNav(tab_item,tab_list_array);
+				//创建子页面
+				addSubWebView(tab_item,tab_list_array);
+			}
+			
+			
+			/**
+			 * 底部导航栏的点击事件
+			 * 通过获取被点击的按钮的id，打开相应的页面
+			 * @author dongdongjie <zdj@ourstu.com> 2017-10-31
+			 */
+			mui(".mui-bar-tab").on("tap",".mui-tab-item",function(){
+				var tab_id = this.getAttribute("id");
+				plus.webview.getWebviewById(tab_id+"-main").show();
+				dom.$header_title.innerHTML = tab_list_array[tab_id].title; 
+				mui.fire()
+			})
+		})
+		
+		function addBottomNav(tab_item,tab_list_array){
+			var addChild = document.createElement("a");
+			addChild.setAttribute("id",tab_list_array[tab_item].name);
+			
+			if(tab_list_array[tab_item].name === HOME_WEBVIEW){
+				addChild.setAttribute("class","mui-tab-item mui-active");
+			}else{
+				addChild.setAttribute("class","mui-tab-item");
+			}
+			addChild.innerHTML = '<span class="mui-icon iconfont '+ tab_list_array[tab_item].bottom_icon_name +'"></span><span class="mui-tab-label">'+tab_list_array[tab_item].bottom_name+'</span>';
+			dom.$bottom_nav.appendChild(addChild) ;
+		}
+		//创建子页面方法
+		function addSubWebView(tab_item,tab_list_array){
+			var webViewData = {
+					url : "../../models/"+tab_list_array[tab_item].name+"/view/main.html",
+					id : tab_list_array[tab_item].name+"-main",
+					styles : {
+						top: HEADER_HEIGHT+"px",
+						bottom: BOTTOM_MENU_HEIGHT+"px",
+						height: WINDOW_HEIGHT-HEADER_HEIGHT-BOTTOM_MENU_HEIGHT+"px"
+					}
+				}
+				plus.webview.create(webViewData.url,webViewData.id,webViewData.styles,{}); 
+				if(tab_list_array[tab_item].name === HOME_WEBVIEW){
+					plus.webview.getWebviewById(HOME_WEBVIEW+"-main").show();
+					dom.$header_title.innerHTML = tab_list_array[tab_item].title; 
+				}
+		}
+	</script>
+</html>

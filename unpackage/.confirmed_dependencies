@@ -1,0 +1,89 @@
+{
+	"init/view/index.html": {
+		"resources": [
+			"public/css/mui.css",
+			"public/js/mui.js",
+			"public/fonts/mui.ttf",
+			"init/view/buttom-meun.html",
+			"public/lib/mui.js",
+			"init/view/bottom-menu.html"
+		],
+		"refer": [
+			"init/view/buttom-meun.html",
+			"init/view/header.html",
+			"init/view/bottom-menu.html"
+		]
+	},
+	"init/view/buttom-meun.html": {
+		"resources": [
+			"public/fonts/mui.ttf",
+			"public/css/mui.css",
+			"public/js/mui.js",
+			"public/lib/mui.js"
+		],
+		"refer": [
+			"home/view/main.html",
+			"init/view/../../home/view/main.html",
+			"phone/view/main.html",
+			"gear/view/main.html",
+			"email/view/main.html",
+			"models/home/view/main.html",
+			"models/email/view/main.html",
+			"models/gear/view/main.html",
+			"models/phone/view/main.html"
+		]
+	},
+	"init/view/header.html": {
+		"resources": [
+			"public/css/mui.css"
+		]
+	},
+	"phone/view/main.html": {
+		"resources": [
+			"public/css/mui.css"
+		]
+	},
+	"models/home/view/main.html": {
+		"resources": [
+			"public/css/mui.css",
+			"models/home/img/banan.jpg",
+			"models/home/img/voice-front.png",
+			"public/js/mui.js",
+			"models/home/css/main.css",
+			"models/home/js/main.js",
+			"public/fonts/mui.ttf",
+			"public/lib/mui.js",
+			"public/lib/flexible.js"
+		]
+	},
+	"init/view/bottom-menu.html": {
+		"resources": [
+			"public/fonts/mui.ttf",
+			"public/css/mui.css",
+			"public/lib/mui.js",
+			"public/css/core.css",
+			"init/css/buttom-menu.css",
+			"config.js",
+			"public/js/app.js"
+		],
+		"refer": [
+			"models/home/view/main.html",
+			"models/email/view/main.html",
+			"models/gear/view/main.html",
+			"models/phone/view/main.html",
+			"models/Purchase/view/main.html",
+			"models/ShoppingMall/view/main.html",
+			"models/Dynamic/view/main.html",
+			"models/Me/view/main.html"
+		]
+	},
+	"models/ShoppingMall/view/main.html": {
+		"resources": [
+			"models/ShoppingMall/img/banan.jpg",
+			"models/ShoppingMall/img/voice-front.png",
+			"models/ShoppingMall/js/main.js",
+			"models/ShoppingMall/css/main.css",
+			"public/lib/flexible.js"
+		]
+	}
+}
