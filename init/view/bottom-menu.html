@@ -37,7 +37,9 @@
 		</nav>
 	</body>
 	<script src="../../public/lib/mui.js" type="text/javascript"></script>
+	<script src="../../public/lib/template.js" type="text/javascript"></script>
 	<script src="../../public/js/app.js" type="text/javascript"></script>
+	<script src="../temp/tottom-menu-temp.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		var dom = {
 			$header_title : document.querySelector(".mui-bar-nav .mui-title"),
@@ -81,11 +83,16 @@
 			mui(".mui-bar-tab").on("tap",".mui-tab-item",function(){
 				var tab_id = this.getAttribute("id");
 				plus.webview.getWebviewById(tab_id+"-main").show();
-				dom.$header_title.innerHTML = tab_list_array[tab_id].title; 
+				dom.$header_title.innerHTML = tab_list_array[tab_id].title;
 				mui.fire()
 			})
 		})
 		
+		
+//----------------------------------------------------------------------------------------------------------------------------------------		
+//------------------------------------------------分界线：以下为function方法---------------------------------------------------------------	
+//----------------------------------------------------------------------------------------------------------------------------------------	
+		//创建底部导航栏方法
 		function addBottomNav(tab_item,tab_list_array){
 			var addChild = document.createElement("a");
 			addChild.setAttribute("id",tab_list_array[tab_item].name);
@@ -95,8 +102,10 @@
 			}else{
 				addChild.setAttribute("class","mui-tab-item");
 			}
-			addChild.innerHTML = '<span class="mui-icon iconfont '+ tab_list_array[tab_item].bottom_icon_name +'"></span><span class="mui-tab-label">'+tab_list_array[tab_item].bottom_name+'</span>';
-			dom.$bottom_nav.appendChild(addChild) ;
+			var render=template.compile(bottom_nav_item);	
+			
+			addChild.innerHTML = render(tab_list_array[tab_item]);
+			dom.$bottom_nav.appendChild(addChild);
 		}
 		//创建子页面方法
 		function addSubWebView(tab_item,tab_list_array){

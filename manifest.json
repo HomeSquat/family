@@ -273,7 +273,9 @@
 					"public/css/core.css",
 					"init/css/buttom-menu.css",
 					"config.js",
-					"public/js/app.js"
+					"public/js/app.js",
+					"public/lib/template.js",
+					"init/temp/tottom-menu-temp.js"
 				],
 				"refer": [
 					"models/home/view/main.html",
@@ -293,7 +295,13 @@
 					"models/ShoppingMall/img/voice-front.png",
 					"models/ShoppingMall/js/main.js",
 					"models/ShoppingMall/css/main.css",
-					"public/lib/flexible.js"
+					"public/lib/flexible.js",
+					"public/css/mui.css",
+					"public/lib/mui.js",
+					"public/fonts/mui.ttf",
+					"public/lib/mui.pullToRefresh.material.js",
+					"public/lib/mui.pullToRefresh.js",
+					"public/css/pull-top-tips.css"
 				],
 				"refer": [],
 				"priority": 0

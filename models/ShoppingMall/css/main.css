@@ -46,6 +46,7 @@
 
 /*tab-list横向滚动区域--start*/
 #tab-list{
+	position: absolute;
     box-sizing: border-box;
     height: 2.133333rem;
     padding:0.266667rem 0;
@@ -53,7 +54,11 @@
     left: 0;
     background: #fff;
 }
-
+#tab-list.active{
+	position: fixed;
+	top: 0;
+	box-shadow: 0 0 1px 0 #ccc;
+}
 #tab-list .mui-scroll{
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -100,8 +105,56 @@
 
 /*tab-list横向滚动区域--end*/ 
 
-/*new-content-list最新内容展示列表--start*/
-#new-content-list{
+/*special-column-list最新内容展示列表--start*/
+#special-column-list{
     margin-top: 2.666667rem;
 }
-/*new-content-list最新内容展示列表--end*/
+#special-column-list .mui-media{
+    display: flex;
+    box-sizing: border-box;
+    height: 3.733333rem;
+    padding: 0.266667rem;
+}
+#special-column-list .mui-media img.special-column-cover{
+    width: 2.4rem;
+    height: 100%;
+}
+#special-column-list .mui-media .mui-media-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 6.933333rem;
+    height: 100%;
+    padding-left: 0.266667rem;
+}
+#special-column-list .mui-media .mui-media-body .special-column-item-head{
+	display:flex;
+	justify-content: space-between;
+}
+#special-column-list .mui-media .mui-media-body .special-column-item-head .special-column-item-head-title{
+    font-size: 0.533333rem;
+    font-weight: 700;
+    color: #000;
+}
+#special-column-list .mui-media .mui-media-body .special-column-item-head .special-column-item-head-money{
+    font-size: 0.4rem;
+	color: #ff3300;
+}
+#special-column-list .mui-media .mui-media-body .special-column-item-ellipsis{
+    font-size: 0.426667rem;
+    color: #bcbcbc;
+}
+#special-column-list .mui-media .mui-media-body .special-column-item-update-time{
+    display: inline-block;
+    width: 2.4rem;
+    padding: 0.066667rem;
+    line-height: 0.333333rem;
+    text-align: center;
+    color: #bcbcbc;
+    border: 1px solid #bcbcbc;
+    border-radius: 0.106667rem;
+}
+#special-column-list .mui-media .mui-media-body .special-column-item-update-content{
+    color: #767676;
+}
+/*special-column-list最新内容展示列表--end*/
