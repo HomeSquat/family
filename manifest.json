@@ -301,7 +301,9 @@
 					"public/fonts/mui.ttf",
 					"public/lib/mui.pullToRefresh.material.js",
 					"public/lib/mui.pullToRefresh.js",
-					"public/css/pull-top-tips.css"
+					"public/css/pull-top-tips.css",
+					"models/ShoppingMall/temp/main-temp.js",
+					"public/lib/template.js"
 				],
 				"refer": [],
 				"priority": 0
