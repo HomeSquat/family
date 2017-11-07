@@ -66,7 +66,8 @@
 			"config.js",
 			"public/js/app.js",
 			"public/lib/template.js",
-			"init/temp/tottom-menu-temp.js"
+			"init/temp/tottom-menu-temp.js",
+			"public/js/appHttp.js"
 		],
 		"refer": [
 			"models/home/view/main.html",
@@ -93,7 +94,23 @@
 			"public/lib/mui.pullToRefresh.js",
 			"public/css/pull-top-tips.css",
 			"models/ShoppingMall/temp/main-temp.js",
-			"public/lib/template.js"
+			"public/lib/template.js",
+			"public/js/app.js",
+			"config.js",
+			"public/js/appHttp.js",
+			"public/js/appOpenWebView.js"
+		],
+		"refer": [
+			"models/ShoppingMall/view/SpecialColumn-index.html"
+		]
+	},
+	"models/ShoppingMall/view/SpecialColumn-index.html": {
+		"resources": [
+			"public/css/mui.css",
+			"models/ShoppingMall/css/main.css",
+			"public/lib/flexible.js",
+			"public/css/pull-top-tips.css",
+			"public/fonts/mui.ttf"
 		]
 	}
 }

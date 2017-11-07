@@ -1,1 +1,0 @@
-document.write("<script language='javascript' src='../../config.js'></script>");
