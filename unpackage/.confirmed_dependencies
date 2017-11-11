@@ -101,7 +101,8 @@
 			"public/js/appOpenWebView.js"
 		],
 		"refer": [
-			"models/ShoppingMall/view/SpecialColumn-index.html"
+			"models/ShoppingMall/view/SpecialColumn-index.html",
+			"models/ShoppingMall/view/classification.html"
 		]
 	},
 	"models/ShoppingMall/view/SpecialColumn-index.html": {
@@ -110,7 +111,29 @@
 			"models/ShoppingMall/css/main.css",
 			"public/lib/flexible.js",
 			"public/css/pull-top-tips.css",
-			"public/fonts/mui.ttf"
+			"public/fonts/mui.ttf",
+			"public/lib/mui.js",
+			"public/js/appOpenWebView.js",
+			"models/ShoppingMall/js/specialcolumn-index.js",
+			"models/ShoppingMall/css/specialcolumn-index.css"
+		]
+	},
+	"models/ShoppingMall/view/classification.html": {
+		"resources": [
+			"models/ShoppingMall/js/classification.js",
+			"models/ShoppingMall/css/classification.css",
+			"public/fonts/mui.ttf",
+			"public/css/mui.css",
+			"public/lib/mui.js",
+			"public/js/appOpenWebView.js",
+			"models/ShoppingMall/css/main.css",
+			"public/lib/flexible.js",
+			"public/css/pull-top-tips.css",
+			"config.js",
+			"public/css/core.css",
+			"public/lib/mui.pullToRefresh.material.js",
+			"public/lib/mui.pullToRefresh.js",
+			"public/lib/template.js"
 		]
 	}
 }

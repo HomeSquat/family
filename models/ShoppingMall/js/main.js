@@ -74,7 +74,7 @@ mui.plusReady(function() {
 
 	/**
 	 * 区域滚动设置
-	 * @author dongdongjie <zdj@ourstr.com> 2017-11-04
+	 * @author dongdongjie <zdj@ourstu.com> 2017-11-04
 	 */
 	mui(dom.$tab_list).scroll({
 		scrollX: true, //是否横向滚动
@@ -84,9 +84,15 @@ mui.plusReady(function() {
 		bounce: true //是否启用回弹
 	});
 	
-	document.getElementById("open-special-column").addEventListener("tap",function(){
-//		plus.webview.open("../view/SpecialColumn-index.html","SpecialColumn-index",{},"pop-in",200);
-		appOpenWebView.openSubWebView();
+	/**
+	 * 区域滚动的点击事件，点击.tab-item进入相应的界面
+	 * webTitleName 传到相应页面的值，用于在新打开的页面中显示title文字
+	 * @author dongdongjie <zdj@ourstu.com> 2017-11-11
+	 */
+	mui(dom.$tab_list).on("tap",".tab-item",function(){
+		var webTitleName = this.getElementsByTagName("p")[0].innerHTML;
+		appOpenWebView.openSubWebView("../view/classification.html","classification",{webViewName : webTitleName});
+	
 	})
 	/**
 	 * 上拉加载，下拉刷新

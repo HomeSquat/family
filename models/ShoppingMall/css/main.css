@@ -133,6 +133,7 @@
 #special-column-list .mui-media img.special-column-cover{
     width: 2.4rem;
     height: 100%;
+    border-radius: 8px;
 }
 #special-column-list .mui-media .mui-media-body{
     display: flex;
@@ -197,6 +198,7 @@
 #boutique-list .mui-media img.boutique-cover{
     width: 2.4rem;
     height: 100%;
+    border-radius: 8px;
 }
 #boutique-list .mui-media .mui-media-body{
     display: flex;
